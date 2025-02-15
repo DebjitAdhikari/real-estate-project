@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <Building2 className="h-8 w-8 text-blue-400" />
+              {/* <Building2 className="h-8 w-8 text-blue-400" /> */}
               <span className="ml-2 text-2xl font-bold">PrimeEstate</span>
             </div>
             <p className="text-gray-400">Your trusted partner in finding the perfect property.</p>
@@ -39,22 +39,22 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center text-gray-400">
                 <MapPin className="h-5 w-5 mr-2" />
-                123 Business Avenue, Suite 100
+                Kolkata, Sector 5, 700233
               </li>
               <li className="flex items-center text-gray-400">
                 <Phone className="h-5 w-5 mr-2" />
-                +1 (555) 123-4567
+                +91 8343223434
               </li>
               <li className="flex items-center text-gray-400">
                 <Mail className="h-5 w-5 mr-2" />
-                info@primeestate.com
+                realestate@email.com
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} PrimeEstate. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PrimeEstate. All rights reserved. Developed by <a className='underline' href="https://www.thinknxtmedia.com/">Think Nxt Media.</a> </p>
         </div>
       </div>
     </footer>

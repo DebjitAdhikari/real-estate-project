@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, ArrowRight, Heart, MapPin, Bed, Bath, Square, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -69,6 +70,7 @@ const properties = [
 
 function Properties() {
   const [selectedProperty, setSelectedProperty] = React.useState(null);
+  const navigate=useNavigate()
 
   return (
     <div className="bg-[#3e3e3e] text-white min-h-screen">
@@ -216,13 +218,15 @@ function Properties() {
                 Featuring panoramic ocean views, modern architecture, and premium finishes throughout. 
                 This exclusive property offers the perfect blend of indoor and outdoor living spaces.
               </p>
-              <div className="flex gap-4">
+              <div  className="flex gap-4">
                 <motion.button 
                   className="flex-1 bg-[#f5c96a] text-[#3e3e3e] py-4 rounded-lg font-semibold flex items-center justify-center"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={()=>{navigate("vrindavan-garden")}}
                 >
-                  Schedule Viewing
+                  {/* Schedule Viewing */}
+                  View Details
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </motion.button>
                 <motion.button 

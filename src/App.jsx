@@ -7,6 +7,7 @@ import About from './pages/About';
 // import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Properties from './pages/Properties';
+import PropertyDetails from './pages/ProperyDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/properties/vrindavan-garden" element={<PropertyDetails />} />
           </Routes>
         </main>
         <Footer />

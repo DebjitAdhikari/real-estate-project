@@ -91,7 +91,7 @@ function Home() {
               variants={fadeInUp}
             >
               <img 
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="room-hero.jpeg" 
                 alt="Modern building"
                 className="rounded-lg shadow-2xl object-cover h-full w-full"
               />
@@ -127,20 +127,20 @@ function Home() {
               {
                 image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
                 title: "Modern Villa",
-                location: "Beverly Hills",
-                price: "$5,900,000"
+                location: "Kolkata",
+                price: "₹5,900,000"
               },
               {
                 image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                title: "Luxury Penthouse",
-                location: "Manhattan",
-                price: "$3,200,000"
+                title: "Luxury Bedroom",
+                location: "Hyderabad",
+                price: "₹3,200,000"
               },
               {
                 image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                title: "Seaside Mansion",
-                location: "Malibu",
-                price: "$8,500,000"
+                title: "Hill Top",
+                location: "Bangalore",
+                price: "₹8,500,000"
               }
             ].map((property, index) => (
               <motion.div 
@@ -342,20 +342,20 @@ function Home() {
               {
                 icon: Phone,
                 title: "Call Us",
-                info: "+1 (555) 123-4567",
+                info: "+91 8343832712",
                 subInfo: "Mon-Fri 9am-6pm"
               },
               {
                 icon: MessageSquare,
                 title: "Email Us",
-                info: "info@realestate.com",
+                info: "realestate@email.com",
                 subInfo: "24/7 Online Support"
               },
               {
                 icon: MapPin,
                 title: "Visit Us",
-                info: "123 Property Lane",
-                subInfo: "New York, NY 10001"
+                info: "Sector 5",
+                subInfo: "Kolkata, 700322"
               }
             ].map((contact, index) => (
               <motion.div 

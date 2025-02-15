@@ -22,27 +22,27 @@ const staggerContainer = {
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Debjit Adhikari",
     role: "Homeowner",
     text: "The team went above and beyond to help us find our dream home. Their expertise and dedication are unmatched."
   },
   {
-    name: "Michael Chen",
+    name: "Sanjit Pal",
     role: "Property Investor",
     text: "Professional, knowledgeable, and always available. They made the investment process smooth and profitable."
   },
   {
-    name: "Emma Davis",
+    name: "Manjit Pal",
     role: "First-time Buyer",
     text: "As a first-time buyer, I appreciated their patience and guidance throughout the entire process."
   },
   {
-    name: "James Wilson",
+    name: "Akash Kundu",
     role: "Commercial Client",
     text: "Outstanding service in finding the perfect commercial property. Their market knowledge is exceptional."
   },
   {
-    name: "Lisa Thompson",
+    name: "Karan Kumar Yadav",
     role: "Property Seller",
     text: "They helped me get the best price for my property. The marketing strategy was brilliant."
   }
@@ -204,19 +204,19 @@ function About() {
             {[
               {
                 image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                name: "David Anderson",
+                name: "Debjit Adhikari",
                 role: "CEO & Founder",
                 description: "20+ years of real estate expertise"
               },
               {
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                name: "Sarah Martinez",
+                name: "Sanjit Pal",
                 role: "Head of Operations",
                 description: "Former Fortune 500 executive"
               },
               {
                 image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                name: "Michael Chang",
+                name: "Manjit Pal",
                 role: "Chief Investment Officer",
                 description: "15+ years in property investment"
               }
