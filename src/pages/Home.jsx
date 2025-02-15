@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Home as HomeIcon, Building, Users, Phone, Star, MessageSquare, MapPin, Clock } from 'lucide-react';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 }
 };
@@ -26,7 +26,7 @@ function Home() {
           backgroundImage: 'url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")'
         }}
       >
-        <div className="absolute inset-0 bg-[#3e3e3e] bg-opacity-80"></div>
+        <div className="absolute inset-0 bg-[#3e3e3e] bg-opacity-60"></div>
         <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
