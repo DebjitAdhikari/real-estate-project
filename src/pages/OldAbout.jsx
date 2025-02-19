@@ -47,15 +47,8 @@ const testimonials = [
     text: "They helped me get the best price for my property. The marketing strategy was brilliant."
   }
 ];
-const milestones = [
-    { year: '2003', title: 'Foundation', description: 'Started with a small office and big dreams' },
-    { year: '2008', title: 'Market Expansion', description: 'Opened offices in major metropolitan areas' },
-    { year: '2013', title: 'Digital Revolution', description: 'Launched innovative property technology solutions' },
-    { year: '2018', title: 'Global Recognition', description: 'Awarded Best Real Estate Agency' },
-    { year: '2023', title: 'Sustainable Future', description: 'Pioneering eco-friendly property development' }
-  ];
 
-function About() {
+function OldAbout() {
   return (
     <div className="bg-[#3e3e3e] text-white">
       {/* Hero Section */}
@@ -132,7 +125,7 @@ function About() {
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-[10%] sm:left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#f5c96a] opacity-20"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#f5c96a] opacity-20"></div>
             
             {[
               {
@@ -163,7 +156,7 @@ function About() {
             ].map((milestone, index) => (
               <motion.div 
                 key={index}
-                className={`relative flex flex-col sm:flex-row sm:items-center items-start mb-12 ${
+                className={`relative flex items-center mb-12 ${
                   index % 2 === 0 ? 'justify-start' : 'justify-end'
                 }`}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -171,21 +164,19 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className={`sm:w-1/2 ${index % 2 === 0 ? 'sm:pr-12' : 'sm:pl-12'}`}>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
                   <div className="bg-[#2e2e2e] p-6 rounded-xl shadow-lg">
                     <div className="text-[#f5c96a] text-2xl font-bold mb-2">{milestone.year}</div>
                     <h3 className="text-xl font-semibold mb-2">{milestone.title}</h3>
                     <p className="text-gray-300">{milestone.description}</p>
                   </div>
                 </div>
-                <div className="hidden sm:block sm:absolute left-[10%] sm:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#f5c96a] rounded-full"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#f5c96a] rounded-full"></div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-      
-      
 
       {/* Team Section */}
       <section className="py-20 bg-[#2e2e2e]">
@@ -376,4 +367,4 @@ function About() {
   );
 }
 
-export default About;
+export default OldAbout;

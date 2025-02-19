@@ -8,6 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Properties from './pages/Properties';
 import PropertyDetails from './pages/ProperyDetails';
+import OldAbout from './pages/OldAbout';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<OldAbout />} /> */}
             <Route path="/properties" element={<Properties />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/properties/vrindavan-garden" element={<PropertyDetails />} />
