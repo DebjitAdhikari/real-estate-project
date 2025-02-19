@@ -6,14 +6,15 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#252525] text-white py-4 shadow-lg fixed top-0 w-full z-50">
+    <nav className="bg-[#252525] text-white py-2 shadow-lg fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center space-x-3">
-          <img src="/logo.png" alt="Logo" className="h-10 w-10" />
-          <a href="/" className="text-2xl font-bold text-[#f5c96a]">DreamProperty</a>
+          {/* <img src="images/shah-real-estate-logo.png" alt="Logo" className="h-10 w-10" /> */}
+          <img src="/images/shah-real-estate-logo.png" alt="Logo" className="sm:h-[80px] h-[60px]" />
+          {/* <a href="/" className="text-2xl font-bold text-[#f5c96a]">Shah Real Estate</a> */}
         </div>
         <button 
-          className="md:hidden text-[#f5c96a]"
+          className="md:hidden bg-transparent text-[#f5c96a]"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={30} /> : <Menu size={30} />}

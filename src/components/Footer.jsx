@@ -9,8 +9,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               {/* <Building2 className="h-8 w-8 text-blue-400" /> */}
-              <span className="ml-2 text-2xl font-bold">PrimeEstate</span>
+              {/* <span className="ml-2 text-2xl font-bold">PrimeEstate</span> */}
+              
             </div>
+            <img src="/images/shah-real-estate-logo.png" className='w-[80px] sm:w-[120px]' alt="" />
             <p className="text-gray-400">Your trusted partner in finding the perfect property.</p>
           </div>
           

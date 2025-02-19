@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Star, 
@@ -27,11 +27,16 @@ const fadeInUp = {
 const PropertyDetails = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [showAllAmenities, setShowAllAmenities] = useState(false);
-
+  const topref=useRef(null)
   const images = [
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+    // "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+    // "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+    // "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+    "/images/vrindavan-1.jpg", 
+    "/images/vrindavan-3.jpg", 
+    "/images/vrindavan-2.jpg", 
+    "/images/vrindavan-4.jpg", 
+
   ];
 
   const amenities = [
@@ -77,9 +82,11 @@ const PropertyDetails = () => {
   const prevImage = () => {
     setActiveImage((prev) => (prev - 1 + images.length) % images.length);
   };
-
+ useEffect(()=>{
+  topref.current?.scrollIntoView({behavior:"smooth"})
+ },[])
   return (
-    <div className="bg-[#3e3e3e] mt-2 sm:mt-10 text-white min-h-screen">
+    <div ref={topref} className="bg-[#3e3e3e] mt-2 pt-[50px] sm:mt-10 text-white min-h-screen">
       {/* Header Section */}
       <motion.div 
         className="relative h-[60vh]"
@@ -127,9 +134,9 @@ const PropertyDetails = () => {
       {/* Quick Actions */}
       <div className="bg-[#2e2e2e] py-4">
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4">
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center bg- space-x-6">
             <motion.button 
-              className="flex items-center space-x-2 hover:text-[#f5c96a]"
+              className="flex items-center bg-transparent space-x-2 hover:text-[#f5c96a]"
               whileHover={{ scale: 1.05 }}
             >
               <Share2 className="h-5 w-5" />
@@ -172,8 +179,8 @@ const PropertyDetails = () => {
               </div>
               <h1 className="text-4xl font-bold mb-4">Luxury Beachfront Villa</h1>
               <div className="flex items-center space-x-4">
-                <span className="text-3xl font-bold text-[#f5c96a]">$2,500,000</span>
-                <span className="text-gray-300">($781/sq.ft.)</span>
+                <span className="text-3xl font-bold text-[#f5c96a]">₹2,500,000</span>
+                <span className="text-gray-300">(₹781/sq.ft.)</span>
               </div>
             </motion.div>
 
@@ -256,7 +263,7 @@ const PropertyDetails = () => {
               {amenities.length > 6 && (
                 <button
                   onClick={() => setShowAllAmenities(!showAllAmenities)}
-                  className="mt-4 text-[#f5c96a] hover:underline"
+                  className="mt-4 bg-transparent text-[#f5c96a] hover:underline"
                 >
                   {showAllAmenities ? 'Show Less' : 'Show All Amenities'}
                 </button>
