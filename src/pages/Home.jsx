@@ -273,9 +273,9 @@ function Home() {
               variants={fadeInUp}
             >
               <img 
-                src="images/vrindavan-3.jpg" 
+                src="images/vrindavan-4.jpg" 
                 alt="Modern building"
-                className="rounded-lg shadow-2xl object-cover h-full w-full"
+                className="rounded-lg shadow-2xl object-full h-full w-full"
               />
             </motion.div>
           </motion.div>
