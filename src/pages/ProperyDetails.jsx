@@ -175,9 +175,9 @@ const PropertyDetails = () => {
             >
               <div className="flex items-center space-x-4 mb-2">
                 <MapPin className="h-5 w-5 text-[#f5c96a]" />
-                <span className="text-gray-300">Miami Beach, FL</span>
+                <span className="text-gray-300">Kolkata, India</span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Luxury Beachfront Villa</h1>
+              <h1 className="text-4xl font-bold mb-4">Vrindavan Garden</h1>
               <div className="flex items-center space-x-4">
                 <span className="text-3xl font-bold text-[#f5c96a]">₹2,500,000</span>
                 <span className="text-gray-300">(₹781/sq.ft.)</span>
