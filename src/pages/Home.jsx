@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, Home as HomeIcon, Building, Users, Phone, Star, MessageSquare, MapPin, Clock, Bed, Heart, Bath, Square } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import "./styles.css"
+import 'swiper/css/pagination';
 import FloatingBlob from '../components/FloatingBlob';
 
 const fadeInUp = {
@@ -9,7 +14,11 @@ const fadeInUp = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 }
 };
-
+const fadeInDown = {
+  initial: { opacity: 0, y: -20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: "easeInOut" },
+};
 
 
 
@@ -216,7 +225,33 @@ function Home() {
       },
     },
   };
-
+const testimonials = [
+  {
+    name: "Debjit Adhikari",
+    role: "Homeowner",
+    text: "The team went above and beyond to help us find our dream home. Their expertise and dedication are unmatched."
+  },
+  {
+    name: "Sanjit Pal",
+    role: "Property Investor",
+    text: "Professional, knowledgeable, and always available. They made the investment process smooth and profitable."
+  },
+  {
+    name: "Manjit Pal",
+    role: "First-time Buyer",
+    text: "As a first-time buyer, I appreciated their patience and guidance throughout the entire process."
+  },
+  {
+    name: "Akash Kundu",
+    role: "Commercial Client",
+    text: "Outstanding service in finding the perfect commercial property. Their market knowledge is exceptional."
+  },
+  {
+    name: "Karan Kumar Yadav",
+    role: "Property Seller",
+    text: "They helped me get the best price for my property. The marketing strategy was brilliant."
+  }
+];
   return (
     <div className="bg-[#3e3e3e] pt-[60px] text-white">
       {/* Hero Section */}
@@ -326,7 +361,7 @@ function Home() {
         animate="animate"
       />
       <motion.div
-        className="absolute top-1/3 left-1/2 w-24 h-24 bg-[#6bbaff] rounded-lg opacity-25 blur-lg"
+        className="absolute top-1/3 left-1/2 w-24 h-24 bg-[#6bbaff] rounded-full opacity-25 blur-lg"
         variants={floatingAnimation}
         animate="animate"
       />
@@ -425,51 +460,71 @@ function Home() {
       </div>
     </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-[#3e3e3e]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-[#f5c96a]">Client</span> Testimonials
-            </h2>
-            <p className="text-gray-300">What our satisfied clients say about us</p>
-          </motion.div>
+      {/* Testimonials Section with Slider */}
+      <section className="py-20 bg-[#3e3e3e] relative overflow-hidden"> {/* Added relative for positioning blobs */}
+      {/* Blob Animations */}
+      <motion.div
+        className="sm:absolute sm:block hidden w-64 h-64 bg-[#14c2b0] rounded-full blur-[150px] opacity-10 top-0 left-0 -translate-x-1/2 -translate-y-1/4 animate-blob" // Adjusted positioning and animation
+        variants={fadeInDown}
+        initial="initial"
+        whileInView="animate"
+        transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }} // Smooth animation
+      />
+       <motion.div
+        className="absolute w-48 h-48 bg-[#c2b614] sm:bg-[#549952] rounded-full blur-[70px] opacity-20 bottom-0 right-0 translate-x-1/4 translate-y-1/4 animate-blob" // Adjusted positioning and animation
+        variants={fadeInDown}
+        initial="initial"
+        whileInView="animate"
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }} // Smooth animation
+      />
+        <motion.div
+        className="absolute w-56 h-56 bg-[#14c2b0] sm:bg-[#f56ac7] rounded-full blur-[80px] opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-blob" // Adjusted positioning and animation
+        variants={fadeInDown}
+        initial="initial"
+        whileInView="animate"
+        transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse" }} // Smooth animation
+      />
 
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                name: "Sarah Johnson",
-                role: "Homeowner",
-                text: "The team went above and beyond to help us find our dream home. Their expertise and dedication are unmatched."
-              },
-              {
-                name: "Michael Chen",
-                role: "Property Investor",
-                text: "Professional, knowledgeable, and always available. They made the investment process smooth and profitable."
-              },
-              {
-                name: "Emma Davis",
-                role: "First-time Buyer",
-                text: "As a first-time buyer, I appreciated their patience and guidance throughout the entire process."
-              }
-            ].map((testimonial, index) => (
-              <motion.div 
-                key={index}
-                className="bg-[#2e2e2e] p-8 rounded-xl shadow-lg"
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
+      <div className="max-w-7xl mx-auto px-6 z-10"> {/* Added z-index to bring content forward */}
+        <motion.div
+          className="text-center mb-16"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold mb-4">
+            <span className="text-[#f5c96a]">Client</span> Testimonials
+          </h2>
+          <p className="text-gray-300">What our satisfied clients say about us</p>
+        </motion.div>
+
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          className="testimonial-slider"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <motion.div
+                className="bg-[#2e2e2e] p-8 rounded-xl shadow-lg h-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -478,16 +533,17 @@ function Home() {
                 </div>
                 <p className="text-gray-300 mb-6">{testimonial.text}</p>
                 <div className="flex items-center">
-                  <div className="ml-4">
+                  <div>
                     <p className="font-semibold">{testimonial.name}</p>
                     <p className="text-[#f5c96a] text-sm">{testimonial.role}</p>
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
       
 
       {/* Request Callback */}
@@ -576,60 +632,64 @@ function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-[#3e3e3e]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-[#f5c96a]">Get in</span> Touch
-            </h2>
-            <p className="text-gray-300">We're here to help you with any questions</p>
-          </motion.div>
+      <section className="py-20 bg-[#1e1e1e] relative overflow-hidden"> {/* Darker background */}
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-grid"> {/* Apply grid background */}
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Phone,
-                title: "Call Us",
-                info: "+91 8343832712",
-                subInfo: "Mon-Fri 9am-6pm"
-              },
-              {
-                icon: MessageSquare,
-                title: "Email Us",
-                info: "realestate@email.com",
-                subInfo: "24/7 Online Support"
-              },
-              {
-                icon: MapPin,
-                title: "Visit Us",
-                info: "Sector 5",
-                subInfo: "Kolkata, 700322"
-              }
-            ].map((contact, index) => (
-              <motion.div 
-                key={index}
-                className="text-center p-8 bg-[#2e2e2e] rounded-xl"
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-              >
-                <contact.icon className="h-12 w-12 text-[#f5c96a] mx-auto mb-6" />
-                <h3 className="text-xl font-semibold mb-4">{contact.title}</h3>
-                <p className="text-[#f5c96a] font-medium mb-2">{contact.info}</p>
-                <p className="text-gray-300">{contact.subInfo}</p>
-              </motion.div>
-            ))}
-          </div>
+      <div className="max-w-7xl mx-auto px-6 z-10"> {/* z-index for content */}
+        <motion.div
+          className="text-center mb-16"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold mb-4 text-white"> {/* White text */}
+            <span className="text-[#f5c96a]">Get in</span> Touch
+          </h2>
+          <p className="text-gray-400">We're here to help you with any questions</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: Phone,
+              title: "Call Us",
+              info: "+91 8343832712",
+              subInfo: "Mon-Fri 9am-6pm",
+            },
+            {
+              icon: MessageSquare,
+              title: "Email Us",
+              info: "realestate@email.com",
+              subInfo: "24/7 Online Support",
+            },
+            {
+              icon: MapPin,
+              title: "Visit Us",
+              info: "Sector 5",
+              subInfo: "Kolkata, 700322",
+            },
+          ].map((contact, index) => (
+            <motion.div
+              key={index}
+              className="text-center p-8 bg-gradient-to-r from-[#282828] to-[#202020] rounded-xl backdrop-blur-md hover:scale-105 transition-transform duration-300" // Gradient background, blur, hover effect
+              // variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+             
+            >
+              <contact.icon className="h-12 w-12 text-[#f5c96a] mx-auto mb-6" />
+              <h3 className="text-xl font-semibold mb-4 text-white">{contact.title}</h3> {/* White text */}
+              <p className="text-[#f5c96a] font-medium mb-2">{contact.info}</p>
+              <p className="text-gray-400">{contact.subInfo}</p> {/* Lighter gray text */}
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 }

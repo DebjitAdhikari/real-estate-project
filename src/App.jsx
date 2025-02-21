@@ -9,12 +9,14 @@ import Contact from './pages/Contact';
 import Properties from './pages/Properties';
 import PropertyDetails from './pages/ProperyDetails';
 import CustomCursor from './components/CustomCursor';
+import GotoTop from './components/GotoTop';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         {/* <CustomCursor></CustomCursor> */}
+        <GotoTop></GotoTop>
         <Navbar />
         <main className="flex-grow">
           <Routes>

@@ -1,0 +1,31 @@
+/* styles.css */
+.animate-blob {
+    animation: blobAnimation 8s infinite; /* Adjust duration as needed */
+  }
+  
+  @keyframes blobAnimation {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-10px, 10px); /* Adjust values for desired movement */
+    }
+    50% {
+      transform: translate(10px, -5px);
+    }
+    75% {
+      transform: translate(-5px, -10px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  /* styles.css */
+.bg-grid {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0z' fill='%23282828'%3E%3C/path%3E%3Cpath d='M0 0l40 40m0-40L0 40' stroke='%23383838' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E"); /* Subtle grid */
+  }
+  
+  /* Optional: Add a subtle glow on hover */
+  .bg-gradient-to-r:hover {
+    box-shadow: 0 0 10px rgba(245, 201, 106, 0.2); /* Adjust color and intensity */
+  }

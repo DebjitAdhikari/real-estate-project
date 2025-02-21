@@ -1,10 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Award, Users, Building2, Trophy, Target, Clock, ArrowRight } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -20,33 +18,7 @@ const staggerContainer = {
   }
 };
 
-const testimonials = [
-  {
-    name: "Debjit Adhikari",
-    role: "Homeowner",
-    text: "The team went above and beyond to help us find our dream home. Their expertise and dedication are unmatched."
-  },
-  {
-    name: "Sanjit Pal",
-    role: "Property Investor",
-    text: "Professional, knowledgeable, and always available. They made the investment process smooth and profitable."
-  },
-  {
-    name: "Manjit Pal",
-    role: "First-time Buyer",
-    text: "As a first-time buyer, I appreciated their patience and guidance throughout the entire process."
-  },
-  {
-    name: "Akash Kundu",
-    role: "Commercial Client",
-    text: "Outstanding service in finding the perfect commercial property. Their market knowledge is exceptional."
-  },
-  {
-    name: "Karan Kumar Yadav",
-    role: "Property Seller",
-    text: "They helped me get the best price for my property. The marketing strategy was brilliant."
-  }
-];
+
 const milestones = [
     { year: '2003', title: 'Foundation', description: 'Started with a small office and big dreams' },
     { year: '2008', title: 'Market Expansion', description: 'Opened offices in major metropolitan areas' },
@@ -254,67 +226,7 @@ function About() {
         </div>
       </section>
 
-      {/* Testimonials Section with Slider */}
-      <section className="py-20 bg-[#3e3e3e]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-[#f5c96a]">Client</span> Testimonials
-            </h2>
-            <p className="text-gray-300">What our satisfied clients say about us</p>
-          </motion.div>
-
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            className="testimonial-slider"
-          >
-            {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <motion.div 
-                  className="bg-[#2e2e2e] p-8 rounded-xl shadow-lg h-full"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="inline-block h-5 w-5 text-[#f5c96a] mr-1" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-6">{testimonial.text}</p>
-                  <div className="flex items-center">
-                    <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-[#f5c96a] text-sm">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
+      
 
       {/* Stats Section */}
       <section className="py-20 bg-[#3e3e3e]">
