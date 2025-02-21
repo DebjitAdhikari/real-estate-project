@@ -547,96 +547,98 @@ const testimonials = [
       
 
       {/* Request Callback */}
-      <section className="py-20 bg-[#2e2e2e]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-[#f5c96a]">Request a</span> Callback
-              </h2>
-              <p className="text-gray-300 mb-8">
-                Leave your details and we'll get back to you within 24 hours
-              </p>
-              <form className="space-y-6">
-                <div>
-                  <input 
-                    type="text" 
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-lg bg-[#3e3e3e] border border-gray-600 focus:border-[#f5c96a] focus:outline-none"
-                  />
+      <section className="py-20 bg-[#2e2e2e] relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid"></div> {/* Grid background */}
+
+      <div className="max-w-7xl mx-auto px-6 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className='z-50'
+          >
+            {/* ... (form content remains the same) */}
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              <span className="text-[#f5c96a]">Request a</span> Callback
+            </h2>
+            <p className="text-gray-300 mb-8">
+              Leave your details and we'll get back to you within 24 hours
+            </p>
+            <form className="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-4 py-3 rounded-lg bg-[#3e3e3e] border border-gray-600 focus:border-[#f5c96a] focus:outline-none text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 rounded-lg bg-[#3e3e3e] border border-gray-600 focus:border-[#f5c96a] focus:outline-none text-white"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full px-4 py-3 rounded-lg bg-[#3e3e3e] border border-gray-600 focus:border-[#f5c96a] focus:outline-none text-white"
+                />
+              </div>
+              <motion.button
+                className="w-full bg-[#f5c96a] text-[#3e3e3e] py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Request Callback
+              </motion.button>
+            </form>
+          </motion.div>
+
+          <motion.div
+            className="relative"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              {/* ... (info boxes content remains the same) */}
+              <div className="space-y-4">
+                <div className="bg-[#3e3e3e] p-6 rounded-lg">
+                  <Clock className="h-8 w-8 text-[#f5c96a] mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Quick Response</h3>
+                  <p className="text-gray-300 text-sm">24/7 dedicated support</p>
                 </div>
-                <div>
-                  <input 
-                    type="email" 
-                    placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded-lg bg-[#3e3e3e] border border-gray-600 focus:border-[#f5c96a] focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <input 
-                    type="tel" 
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3 rounded-lg bg-[#3e3e3e] border border-gray-600 focus:border-[#f5c96a] focus:outline-none"
-                  />
-                </div>
-                <motion.button 
-                  className="w-full bg-[#f5c96a] text-[#3e3e3e] py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Request Callback
-                </motion.button>
-              </form>
-            </motion.div>
-            <motion.div 
-              className="relative"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="bg-[#3e3e3e] p-6 rounded-lg">
-                    <Clock className="h-8 w-8 text-[#f5c96a] mb-4" />
-                    <h3 className="font-semibold mb-2">Quick Response</h3>
-                    <p className="text-gray-300 text-sm">24/7 dedicated support</p>
-                  </div>
-                  <div className="bg-[#3e3e3e] p-6 rounded-lg">
-                    <MessageSquare className="h-8 w-8 text-[#f5c96a] mb-4" />
-                    <h3 className="font-semibold mb-2">Expert Advice</h3>
-                    <p className="text-gray-300 text-sm">Professional guidance</p>
-                  </div>
-                </div>
-                <div className="space-y-4 mt-8">
-                  <div className="bg-[#3e3e3e] p-6 rounded-lg">
-                    <Users className="h-8 w-8 text-[#f5c96a] mb-4" />
-                    <h3 className="font-semibold mb-2">Dedicated Team</h3>
-                    <p className="text-gray-300 text-sm">Personal assistance</p>
-                  </div>
-                  <div className="bg-[#3e3e3e] p-6 rounded-lg">
-                    <Building className="h-8 w-8 text-[#f5c96a] mb-4" />
-                    <h3 className="font-semibold mb-2">Property Tours</h3>
-                    <p className="text-gray-300 text-sm">Virtual & in-person</p>
-                  </div>
+                <div className="bg-[#3e3e3e] p-6 rounded-lg">
+                  <MessageSquare className="h-8 w-8 text-[#f5c96a] mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Expert Advice</h3>
+                  <p className="text-gray-300 text-sm">Professional guidance</p>
                 </div>
               </div>
-            </motion.div>
-          </div>
+              <div className="space-y-4 mt-8">
+                <div className="bg-[#3e3e3e] p-6 rounded-lg">
+                  <Users className="h-8 w-8 text-[#f5c96a] mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Dedicated Team</h3>
+                  <p className="text-gray-300 text-sm">Personal assistance</p>
+                </div>
+                <div className="bg-[#3e3e3e] p-6 rounded-lg">
+                  <Building className="h-8 w-8 text-[#f5c96a] mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Property Tours</h3>
+                  <p className="text-gray-300 text-sm">Virtual & in-person</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-[#1e1e1e] relative overflow-hidden"> {/* Darker background */}
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-grid"> {/* Apply grid background */}
-      </div>
-
+      <section className="py-20 bg-[#2e2e2e] relative overflow-hidden"> {/* Darker background */}
       <div className="max-w-7xl mx-auto px-6 z-10"> {/* z-index for content */}
         <motion.div
           className="text-center mb-16"
