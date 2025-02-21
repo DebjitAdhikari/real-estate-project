@@ -29,7 +29,7 @@ const milestones = [
 
 function About() {
   return (
-    <div className="bg-[#3e3e3e] text-white">
+    <div className="bg-[#3e3e3e] pt-[60px] text-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] bg-cover bg-center flex items-center"
         style={{

@@ -18,7 +18,7 @@ const staggerContainer = {
 
 function ContactPage() {
   return (
-    <div className="bg-[#3e3e3e] text-white min-h-screen">
+    <div className="bg-[#3e3e3e] pt-[60px] text-white min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[50vh] bg-cover bg-center flex items-center"
         style={{

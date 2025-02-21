@@ -182,6 +182,16 @@ const propertiesByStatus = {
     }
   ]
 }
+const floatingAnimation = {
+  animate: {
+    y: [0, 10, 0],
+    transition: {
+      duration: 5,
+      ease: "easeInOut",
+      repeat: Infinity,
+    },
+  },
+};
 
 function Properties() {
   const [activeStatus, setActiveStatus] = useState("completed")
@@ -203,7 +213,7 @@ function Properties() {
   )
 
   return (
-    <div className="bg-[#3e3e3e] text-white min-h-screen">
+    <div className="bg-[#3e3e3e] pt-[60px] text-white min-h-screen">
       {/* Hero Section */}
       <section
         className="relative h-[50vh] bg-cover bg-center flex items-center"
@@ -281,7 +291,7 @@ function Properties() {
                     <p className="text-[#f5c96a] text-2xl font-bold mb-4">
                       {property.price}
                     </p>
-                    <div className="flex justify-between mb-6">
+                    <div className="flex sm:flex-row flex-col gap-6 mb-6">
                       <div className="flex items-center">
                         <Bed className="h-4 w-4 text-gray-300 mr-1" />
                         <span className="text-gray-300">
@@ -318,92 +328,117 @@ function Properties() {
       </section>
 
       {/* Featured Property */}
-      <section className="py-20 bg-[#3e3e3e]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              Featured <span className="text-[#f5c96a]">Property</span>
-            </h2>
-            <p className="text-gray-300">Explore our most exclusive listing</p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-12"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
+      <section className="relative py-20 bg-[#2e2e2e] overflow-hidden">
+            {/* Floating SVG Background Elements */}
             <motion.div
-              className="relative h-[500px] rounded-xl overflow-hidden"
-              variants={fadeInUp}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
-                alt="Featured Property"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
+              className="absolute top-10 left-5 sm:left-16 w-20 h-20 bg-[#f5c96a] rounded-lg opacity-30"
+              variants={floatingAnimation}
+              animate="animate"
+            />
             <motion.div
-              className="flex flex-col justify-center"
-              variants={fadeInUp}
-            >
-              <h3 className="text-3xl font-bold mb-4">
-                Luxury Beachfront Villa
-              </h3>
-              <p className="text-[#f5c96a] text-2xl font-bold mb-6">
-                $2,500,000
-              </p>
-              <div className="flex gap-6 mb-6">
-                <div className="flex items-center">
-                  <Bed className="h-5 w-5 text-[#f5c96a] mr-2" />
-                  <span>4 Bedrooms</span>
-                </div>
-                <div className="flex items-center">
-                  <Bath className="h-5 w-5 text-[#f5c96a] mr-2" />
-                  <span>3.5 Bathrooms</span>
-                </div>
-                <div className="flex items-center">
-                  <Square className="h-5 w-5 text-[#f5c96a] mr-2" />
-                  <span>3,200 sqft</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Experience luxury living at its finest in this stunning
-                beachfront villa. Featuring panoramic ocean views, modern
-                architecture, and premium finishes throughout. This exclusive
-                property offers the perfect blend of indoor and outdoor living
-                spaces.
-              </p>
-              <div className="flex gap-4">
-                <motion.button
-                  className="flex-1 bg-[#f5c96a] text-[#3e3e3e] py-4 rounded-lg font-semibold flex items-center justify-center"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => navigate("vrindavan-garden")}
+              className="sm:absolute sm:block hidden bottom-20 right-10 w-32 h-32 bg-[#f5c96a] rounded-full opacity-20 blur-xl"
+              variants={floatingAnimation}
+              animate="animate"
+            />
+            <motion.div
+              className="absolute top-1/3 left-1/2 w-24 h-24 bg-[#6bbaff] rounded-full opacity-25 blur-lg"
+              variants={floatingAnimation}
+              animate="animate"
+            />
+            
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+              {/* Section Title */}
+              <motion.div
+                className="text-center mb-16"
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-bold mb-4">
+                  Featured <span className="text-[#f5c96a]">Property</span>
+                </h2>
+                <p className="text-gray-300">Explore our most exclusive listing</p>
+              </motion.div>
+      
+              {/* Property Details */}
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                {/* Image Section */}
+                <motion.div
+                  className="relative sm:h-[500px] rounded-xl overflow-hidden shadow-lg"
+                  variants={fadeInUp}
                 >
-                  View Details
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </motion.button>
-                <motion.button
-                  className="flex-1 border-2 border-[#f5c96a] text-[#f5c96a] py-4 rounded-lg font-semibold flex items-center justify-center"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  <img
+                    src="images/vrindavan-3.jpg"
+                    alt="Featured Property"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                </motion.div>
+      
+                {/* Property Information */}
+                <motion.div
+                  className="flex flex-col justify-center"
+                  variants={fadeInUp}
                 >
-                  Contact Agent
-                  <Phone className="ml-2 h-5 w-5" />
-                </motion.button>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+                  <h3 className="text-3xl font-bold mb-4">Vrindavan Garden</h3>
+                  <p className="text-[#f5c96a] text-2xl font-bold mb-6">
+                    ₹2,500,000
+                  </p>
+      
+                  {/* Features */}
+                  <div className="flex sm:flex-row flex-col gap-6 mb-6">
+                    <div className="flex items-center">
+                      <Bed className="h-5 w-5 text-[#f5c96a] mr-2" />
+                      <span>4 Bedrooms</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Bath className="h-5 w-5 text-[#f5c96a] mr-2" />
+                      <span>3.5 Bathrooms</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Square className="h-5 w-5 text-[#f5c96a] mr-2" />
+                      <span>3,200 sqft</span>
+                    </div>
+                  </div>
+      
+                  {/* Description */}
+                  <p className="text-gray-300 mb-8 leading-relaxed">
+                    Experience luxury living at its finest in this stunning beachfront villa.
+                    Featuring panoramic ocean views, modern architecture, and premium
+                    finishes throughout. This exclusive property offers the perfect blend of
+                    indoor and outdoor living spaces.
+                  </p>
+      
+                  {/* Buttons */}
+                  <div className="flex sm:flex-row flex-col gap-4">
+                    <motion.button
+                      className="flex-1 bg-[#f5c96a] text-[#3e3e3e] py-4 rounded-lg font-semibold flex items-center justify-center shadow-md transition-all duration-300 hover:shadow-lg"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => navigate("properties/vrindavan-garden")}
+                    >
+                      View Details
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </motion.button>
+                    <motion.button
+                      className="flex-1 border-2 border-[#f5c96a] text-[#f5c96a] py-4 rounded-lg font-semibold flex items-center justify-center shadow-md transition-all duration-300 hover:bg-[#f5c96a] hover:text-[#3e3e3e]"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Contact Agent
+                      <Phone className="ml-2 h-5 w-5" />
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-[#2e2e2e]">
