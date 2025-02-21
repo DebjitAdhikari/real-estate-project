@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 const fadeInUp = {
-    initial: { opacity: 0, y: 50 },
+    initial: { opacity: 10, y: 40 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
   

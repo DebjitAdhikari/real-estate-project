@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} PrimeEstate. All rights reserved. Developed by <a className='underline' href="https://www.thinknxtmedia.com/">Think Nxt Media.</a> </p>
+          <p>&copy; {new Date().getFullYear()} <span className='text-[#f5c96a]'>Shah Real Estate</span>. All rights reserved. Developed by <a className='underline text-[#f5c96a]' href="https://www.thinknxtmedia.com/">Think Nxt Media.</a> </p>
         </div>
       </div>
     </footer>
